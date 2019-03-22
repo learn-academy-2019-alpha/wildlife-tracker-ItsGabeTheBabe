@@ -1,0 +1,44 @@
+<h1>WildLife Tracker</h1>
+    
+    
+    
+    
+    
+
+<iframe autoplay muted loop id="myVideo"
+src="https://www.youtube.com/embed/xDMP3i36naA?autoplay=1" frameborder="0"> </iframe>
+
+
+
+
+
+    
+    
+    
+    
+    <div class="content">
+    
+  
+    
+   <%= button_to "New", new_animal_path, :method => :get %>
+   
+ <form method="create" action="/animals/new" class="button_to">
+      <input value="Add New Animal" type="submit" />
+    </form>
+
+
+
+<% @animals.each do |animal| %>
+       <ul>
+           <li> common name: <%= animal.common_name %></li>
+           <li> latin name: <%= animal.latin_name %></li>
+           <li> kingdom: <%= animal.kingdom %></li>
+
+  <%= button_to "Edit", edit_animal_path(animal), :method => :get %>
+  <%= button_to "Destroy", animal, method: :delete %>
+  <%= button_to "Show", animal, :method => :get %>
+  
+       </ul>
+           <% end %>
+           
+           </div>
